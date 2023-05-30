@@ -33,6 +33,10 @@ export default StyleSheet.create({
         marginTop:20,
         flexDirection:'row'
     },
+    image_icon:{
+        height:45,
+        width:45
+    },
     facebook:{
         borderWidth:2,
         borderBottomRightRadius:50,

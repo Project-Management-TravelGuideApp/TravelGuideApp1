@@ -88,7 +88,7 @@ const FirstPage = ({navigation}) => {
               })
               .catch(error => console.log(error))
           }>
-          {/* <Icon name="google" size={35} /> */}
+          <Image style={styles.image_icon} source={require('../../../components/assets/icons-google-50.png')}/>
           <Text style={styles.google_text}>Google İle Oturum Aç</Text>
         </TouchableOpacity>
 
@@ -103,7 +103,7 @@ const FirstPage = ({navigation}) => {
           //     .catch(error => console.log(error))
           // }
         >
-          {/* <Icon name="facebook" size={40} /> */}
+          <Image style={styles.image_icon} source={require('../../../components/assets/icons-facebook-50.png')}/>
           <Text style={styles.facebook_text}>Facebook İle Oturum Aç</Text>
         </TouchableOpacity>
 
