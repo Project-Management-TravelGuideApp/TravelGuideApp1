@@ -5,14 +5,14 @@ import Button from '../../../components/Button';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import firebase from '@react-native-firebase/firestore';
-import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
 
 
 const FirstPage = ({navigation}) => {
   //for google sign in
   const [userGoogleData, setUserGoogleData] = useState({});
+  
   //for facebook sign in
-  const [userFacbookData, setUserFacebookData] = useState({});
+  // const [userFacbookData, setUserFacebookData] = useState({});
 
   //for firebase google-sign-in
   useEffect(() => {
@@ -46,27 +46,27 @@ const FirstPage = ({navigation}) => {
   };
 
   //facebook sign-in
-  const facebookLogin = async () => {
-    const result = await LoginManager.logInWithPermissions([
-      'public_profile',
-      'email',
-    ]);
+  // const facebookLogin = async () => {
+  //   const result = await LoginManager.logInWithPermissions([
+  //     'public_profile',
+  //     'email',
+  //   ]);
 
-    if (result.isCancelled) {
-      throw 'User cancelled the login process';
-    }
-    const data = await AccessToken.getCurrentAccessToken();
+  //   if (result.isCancelled) {
+  //     throw 'User cancelled the login process';
+  //   }
+  //   const data = await AccessToken.getCurrentAccessToken();
 
-    if (!data) {
-      throw 'Something went wrong obtaining access token';
-    }
+  //   if (!data) {
+  //     throw 'Something went wrong obtaining access token';
+  //   }
 
-    const facebookCredential = auth.FacebookAuthProvider.credential(
-      data.accessToken,
-    );
-    navigation.navigate('HomePage');
-    return auth().signInWithCredential(facebookCredential);
-  };
+  //   const facebookCredential = auth.FacebookAuthProvider.credential(
+  //     data.accessToken,
+  //   );
+  //   navigation.navigate('HomePage');
+  //   return auth().signInWithCredential(facebookCredential);
+  // };
 
 
   return (
@@ -94,14 +94,14 @@ const FirstPage = ({navigation}) => {
 
         <TouchableOpacity 
           style={styles.facebook}
-          onPress={() =>
-            facebookLogin()
-              .then(res => {
-                console.log(res);
-                setUserFacebookData(res.data);
-              })
-              .catch(error => console.log(error))
-          }
+          // onPress={() =>
+          //   facebookLogin()
+          //     .then(res => {
+          //       console.log(res);
+          //       setUserFacebookData(res.data);
+          //     })
+          //     .catch(error => console.log(error))
+          // }
         >
           {/* <Icon name="facebook" size={40} /> */}
           <Text style={styles.facebook_text}>Facebook İle Oturum Aç</Text>
