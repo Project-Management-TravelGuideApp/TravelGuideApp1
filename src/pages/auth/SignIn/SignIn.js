@@ -5,7 +5,7 @@ import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import {Formik} from 'formik';
 import auth from '@react-native-firebase/auth';
-import {showMessage} from 'react-native-flash-message';
+import { showMessage } from 'react-native-flash-message';
 
 const initialFormValues = {
   username: '',
@@ -19,10 +19,10 @@ const SignIn = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   async function handleFormSubmit(formValues) {
-    if (formValues.password == !formValues.againPassword) {
+    if (formValues.password !== formValues.againPassword) {
       showMessage({
-        message: 'Şifreler Uyuşmuyor!',
-        type: 'danger',
+        message: "Şifreler Uyuşmuyor!",
+        type: "danger",
       });
       return;
     }
@@ -31,10 +31,10 @@ const SignIn = ({navigation}) => {
       await auth().createUserWithEmailAndPassword(
         formValues.usermail,
         formValues.againPassword,
-      );
+      );     
       showMessage({
-        message: 'Kullanıcı Kaydı Başarılı!',
-        type: 'success',
+        message: "Kullanıcı Kaydı Başarılı!",
+        type: "success",
       });
       navigation.navigate('Login');
       setLoading(false);
@@ -46,6 +46,7 @@ const SignIn = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Kayıt Ekranı</Text>
+
       <Formik initialValues={initialFormValues} onSubmit={handleFormSubmit}>
         {({values, handleChange, handleSubmit}) => (
           <>
@@ -55,14 +56,12 @@ const SignIn = ({navigation}) => {
               onType={handleChange('username')}
               placeholder="Adınız"
             />
-            {console.log('username:', values.username)}
             <Text style={styles.lineStyle}>Soyadınız</Text>
             <Input
               value={values.surname}
               onType={handleChange('surname')}
               placeholder="Soyadınız"
             />
-            {console.log('surname:', values.surname)}
             <Text style={styles.lineStyle}>E-Mailiniz</Text>
             <Input
               value={values.usermail}
@@ -70,7 +69,6 @@ const SignIn = ({navigation}) => {
               placeholder="E-Mailiniz"
               type="email"
             />
-            {console.log('mail:', values.usermail)}
             <Text style={styles.lineStyle}>Şifreniz</Text>
             <Input
               value={values.password}
@@ -78,7 +76,6 @@ const SignIn = ({navigation}) => {
               placeholder="Şifreniz"
               secureTextEntry={true}
             />
-            {console.log('password:', values.password)}
             <Text style={styles.lineStyle}>Şifrenizin Tekrarı</Text>
             <Input
               value={values.againPassword}
@@ -86,7 +83,6 @@ const SignIn = ({navigation}) => {
               placeholder="Şifrenizin Tekrarı"
               secureTextEntry={true}
             />
-            {console.log('againPassword:', values.againPassword)}
             <Button text="Kayıt Ol" onPress={handleSubmit} loading={loading} />
           </>
         )}

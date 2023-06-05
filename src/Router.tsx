@@ -2,6 +2,7 @@ import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FlashMessage from "react-native-flash-message";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ const App = () =>{
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="SignIn" component={SignIn} />
       </Stack.Navigator>
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 }
