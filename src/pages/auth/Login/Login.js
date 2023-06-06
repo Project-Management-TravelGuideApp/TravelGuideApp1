@@ -8,7 +8,33 @@ import authErrorMessageParser from '../../../utils/authErrorMessageParser';
 import {Formik} from 'formik';
 import auth from '@react-native-firebase/auth';
 
-const Login = () => {
+const initialFormValues = {
+  usermail :'',
+  password :''
+};
+
+const Login = ({navigation}) => {
+  const [loading, setLoading] = useState(false);
+
+  async function handleFormSubmit(formValues) {
+    try {
+        setLoading(true);
+        await auth().signInWithEmailAndPassword(
+            formValues.usermail,
+            formValues.password,
+        );
+        setLoading(false);
+        navigation.navigate('HomePage');
+    } catch (error) {
+        console.log(error);
+        showMessage({
+            message: authErrorMessageParser(error.code),
+            type:'danger'
+        });
+        setLoading(false);
+    }
+};
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Giriş Ekranı</Text>
