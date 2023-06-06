@@ -10,6 +10,7 @@ import FirstPage from './pages/auth/FirstPage';
 import Login from './pages/auth/Login';
 import HomePage from './pages/user/HomePage';
 import SignIn from './pages/auth/SignIn';
+import ForgotPassword from './pages/auth/ForgotPassword';
 
 const App = () =>{
   return(
@@ -19,6 +20,7 @@ const App = () =>{
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>
