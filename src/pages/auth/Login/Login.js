@@ -28,9 +28,9 @@ const Login = ({navigation}) => {
     } catch (error) {
         console.log(error);
         showMessage({
-            message: authErrorMessageParser(error.code),
-            type:'danger'
-        });
+          message: authErrorMessageParser(error.code),
+          type:'danger'
+      });
         setLoading(false);
     }
 };
