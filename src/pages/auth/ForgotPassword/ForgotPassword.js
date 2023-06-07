@@ -27,7 +27,16 @@ const ForgotPassword = () => {
               'Mail Hesabınıza Sıfırlama Maili Gönderilmiştir.Lütfen Mail Kutunuzu Kontrol Ediniz!',
             type: 'success',
           });
+        })
+        .catch(error => {
+          const errorMessage = error.message;
+          showMessage({
+            message: errorMessage,
+            type: 'danger',
+          });
         });
+      setLoading(false);
+      navigation.navigate('Login');
     } catch (error) {
       console.log(error);
       showMessage({
