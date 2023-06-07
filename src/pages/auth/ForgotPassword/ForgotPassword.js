@@ -12,7 +12,7 @@ const initialFormValues = {
   mail: '',
 };
 
-const ForgotPassword = () => {
+const ForgotPassword = ({navigation}) => {
   const [mail, setMail] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
       });
       setLoading(false);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>
