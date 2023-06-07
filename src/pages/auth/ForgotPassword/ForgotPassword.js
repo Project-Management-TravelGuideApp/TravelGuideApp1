@@ -3,6 +3,8 @@ import {Text, View} from 'react-native';
 import styles from './ForgotPassword.styles';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import { showMessage } from "react-native-flash-message";
+import authErrorMessageParser from "../../../utils/authErrorMessageParser";
 
 const ForgotPassword = () => {
     return(
