@@ -20,8 +20,14 @@ const ForgotPassword = () => {
     try {
       setLoading(true);
       await auth()
-        .sendPasswordResetEmail(formValues.mail);
-        
+        .sendPasswordResetEmail(formValues.mail)
+        .then(() => {
+          showMessage({
+            message:
+              'Mail Hesabınıza Sıfırlama Maili Gönderilmiştir.Lütfen Mail Kutunuzu Kontrol Ediniz!',
+            type: 'success',
+          });
+        });
     } catch (error) {
       console.log(error);
       showMessage({
