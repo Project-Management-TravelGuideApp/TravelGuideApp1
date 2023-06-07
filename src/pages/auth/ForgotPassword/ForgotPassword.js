@@ -19,7 +19,9 @@ const ForgotPassword = () => {
   async function handleFormSubmit(formValues) {
     try {
       setLoading(true);
-      
+      await auth()
+        .sendPasswordResetEmail(formValues.mail);
+        
     } catch (error) {
       console.log(error);
       showMessage({
