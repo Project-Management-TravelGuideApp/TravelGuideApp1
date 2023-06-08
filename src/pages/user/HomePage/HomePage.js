@@ -101,6 +101,9 @@ const HomePage = () => {
   const [keyCity, setKeyCity] = useState('');
   const [keyActivities, setKeyActivities] = useState(null);
 
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedActivities, setSelectedActivities] = useState('');
+
   const renderItem = item => {
     return (
       <View style={styles.item}>
@@ -124,6 +127,7 @@ const HomePage = () => {
             renderItem={renderItem}
             value={keyCity}
             data={cityData}
+            onChange={item => {setSelectedCity(item.value)}}
         />
         <Dropdowns
             valueField="key"
@@ -132,10 +136,17 @@ const HomePage = () => {
             renderItem={renderItem}
             value={keyActivities}
             data={activities}
+            onChange={item => {setSelectedActivities(item.value)}}
         />
       </View>
       <View style={styles.footer_container}>
-        <Button text="Görüntüle" />
+        <Button 
+            text="Görüntüle"
+            onPress={() => navigation.navigate({
+                params :{selectedCity, selectedActivities },
+                merge:true
+            })}
+        />
       </View>
     </View>
   );
