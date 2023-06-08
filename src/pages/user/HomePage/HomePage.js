@@ -104,6 +104,8 @@ const HomePage = () => {
   const [selectedCity, setSelectedCity] = useState('');
   const [selectedActivities, setSelectedActivities] = useState('');
 
+  const navigation = useNavigation();
+
   const renderItem = item => {
     return (
       <View style={styles.item}>
@@ -143,6 +145,7 @@ const HomePage = () => {
         <Button 
             text="Görüntüle"
             onPress={() => navigation.navigate({
+                name: 'ActivitiesList',
                 params :{selectedCity, selectedActivities },
                 merge:true
             })}
