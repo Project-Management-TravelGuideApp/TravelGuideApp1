@@ -13,6 +13,11 @@ const ActivitiesList = () => {
         <View style={styles.header}>
         <Text style={styles.cityName}>Elazığ</Text>
         </View>
+        <TouchableOpacity
+              style={styles.body_container}
+>
+              <Text style={styles.name}>Aktivite Adı</Text>
+            </TouchableOpacity>
         </View>
     );
 };

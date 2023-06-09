@@ -25,4 +25,19 @@ export default StyleSheet.create({
         fontFamily:'Lobster-Regular',
         color:'#FFBF00'
     },
+    body_container:{
+        marginTop:20,
+        marginHorizontal:10,
+        flexDirection:'row',
+        backgroundColor:'rgba(255, 255, 255, 0.22)',
+        borderRadius:10,
+        padding:10
+    },
+    name:{
+        fontSize:20,
+        marginLeft:10,
+        fontFamily:'LilitaOne-Regular',
+        color:'#FFBF00',
+        alignSelf:'center'
+    }
 });
