@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, Image, TouchableOpacity, ActivityIndicator} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ActivityIndicator, Alert, ScrollView} from 'react-native';
 import styles from './ActivitiesList.styles';
 import {Activity} from '../../../services/activities';
 import firestore from '@react-native-firebase/firestore';
@@ -61,9 +61,24 @@ const ActivitiesList = ({route, brand, amount}) => {
       <View style={styles.header}>
         <Text style={styles.cityName}>{route.params?.selectedCity}</Text>
       </View>
-      <TouchableOpacity style={styles.body_container}>
-        <Text style={styles.name}>Aktivite Adı</Text>
-      </TouchableOpacity>
+
+      <ScrollView>
+        {activity &&
+          activity.map((data, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.body_container}
+              onPress={() =>
+                navigation.navigate({
+                  params: data.name,
+                  merge: true,
+                })
+              }>
+              <Image style={styles.image} source={{uri: data.imgUrl}} />
+              <Text style={styles.name}>{data.name}</Text>
+            </TouchableOpacity>
+          ))}
+      </ScrollView>
     </View>
   );
 };
