@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, Image, TouchableOpacity, ActivityIndicator, Alert, ScrollView, FlatList} from 'react-native';
 import styles from './ActivitiesList.styles';
-import {Activity} from '../../../services/activities';
 import firestore from '@react-native-firebase/firestore';
 import {useNavigation} from '@react-navigation/native';
+import {Activity} from '../../../services/activities';
 
 const ActivitiesList = ({route, brand, amount}) => {
   const [activity, setActivity] = useState('');
