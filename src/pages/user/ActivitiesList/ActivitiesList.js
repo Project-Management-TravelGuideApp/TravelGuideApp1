@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, Image, TouchableOpacity, ActivityIndicator, Alert, ScrollView} from 'react-native';
+import {Text, View, Image, TouchableOpacity, ActivityIndicator, Alert, ScrollView, FlatList} from 'react-native';
 import styles from './ActivitiesList.styles';
 import {Activity} from '../../../services/activities';
 import firestore from '@react-native-firebase/firestore';
+import {useNavigation} from '@react-navigation/native';
 
 const ActivitiesList = ({route, brand, amount}) => {
   const [activity, setActivity] = useState('');
@@ -10,6 +11,8 @@ const ActivitiesList = ({route, brand, amount}) => {
   const [keyActivity, setKeyActivity] = useState(null);
 
   const [loading, setLoading] = useState(true);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (
@@ -70,6 +73,7 @@ const ActivitiesList = ({route, brand, amount}) => {
               style={styles.body_container}
               onPress={() =>
                 navigation.navigate({
+                  name: 'DetailPage',
                   params: data.name,
                   merge: true,
                 })

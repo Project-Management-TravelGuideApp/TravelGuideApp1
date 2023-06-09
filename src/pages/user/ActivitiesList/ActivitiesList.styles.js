@@ -33,6 +33,13 @@ export default StyleSheet.create({
         borderRadius:10,
         padding:10
     },
+    image:{
+        width:100,
+        height:100,
+        borderRadius:50,
+        borderColor:'#FFBF00',
+        borderWidth:2,
+    },
     name:{
         fontSize:20,
         marginLeft:10,
