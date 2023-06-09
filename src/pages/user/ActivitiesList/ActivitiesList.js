@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, Image, TouchableOpacity, ActivityIndicator} from 'react-native';
 import styles from './ActivitiesList.styles';
+import {Activity} from '../../../services/activities';
+import firestore from '@react-native-firebase/firestore';
 
 const ActivitiesList = ({route, brand, amount}) => {
   const [activity, setActivity] = useState('');
@@ -9,6 +11,42 @@ const ActivitiesList = ({route, brand, amount}) => {
 
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    if (
+      route.params.selectedActivities == 'Spor Aktiviteleri' &&
+      route.params.selectedCity == 'Elazığ'
+    ) {
+      Activity.getActivitiesSports()
+        .then(act => {
+          setActivity(act), setLoading(false);
+        })
+        .catch(err => Alert.alert(err.code, err.message));
+    } else if (
+      route.params.selectedActivities == 'Tarihi Yerler' &&
+      route.params.selectedCity == 'Elazığ'
+    ) {
+      Activity.getActivitiesHistoric()
+        .then(act => {
+          setActivity(act), setLoading(false);
+        })
+        .catch(err => Alert.alert(err.code, err.message));
+    } else if (
+      route.params.selectedActivities == 'Müzeler' &&
+      route.params.selectedCity == 'Elazığ'
+    ) {
+      Activity.getActivitiesMuseum()
+        .then(act => {
+          setActivity(act), setLoading(false);
+        })
+        .catch(err => Alert.alert(err.code, err.message));
+    } else {
+      Activity.getActivitiesEat()
+        .then(act => {
+          setActivity(act), setLoading(false);
+        })
+        .catch(err => Alert.alert(err.code, err.message));
+    }
+  });
 
   if (loading) {
     <ActivityIndicator color="green" size="large" />;
