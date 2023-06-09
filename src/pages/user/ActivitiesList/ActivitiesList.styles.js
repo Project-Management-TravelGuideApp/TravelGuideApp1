@@ -14,4 +14,15 @@ export default StyleSheet.create({
         left:0, 
         bottom:0
     },
+    header:{
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
+    cityName:{
+        fontSize:25,
+        marginLeft:25,
+        marginTop:20,
+        fontFamily:'Lobster-Regular',
+        color:'#FFBF00'
+    },
 });

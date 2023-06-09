@@ -10,6 +10,9 @@ const ActivitiesList = () => {
           source={require('../../../components/assets/back-gray-blur.jpg')}
           style={styles.background}
         />
+        <View style={styles.header}>
+        <Text style={styles.cityName}>Elazığ</Text>
+        </View>
         </View>
     );
 };
