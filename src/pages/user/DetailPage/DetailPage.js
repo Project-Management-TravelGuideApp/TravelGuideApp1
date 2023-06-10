@@ -10,11 +10,14 @@ import {
 } from 'react-native';
 import styles from './DetailPage.styles';
 import {ActivityDetail} from '../../../services/activitiesDetail';
+import { useNavigation } from '@react-navigation/native';
 
 const DetailPage = ({route}) => {
   // console.log('seçilen aktivite :',route.params);
   const [activity, setActivity] = useState('');
   const [loading, setLoading] = useState(true);
+
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (route.params == 'Hazar Gölü Tekne Turu') {
@@ -202,7 +205,8 @@ const DetailPage = ({route}) => {
               <View stylr={styles.image_container}>
                 <TouchableOpacity
                   style={styles.maps}
-                  >
+                  onPress={() => navigation.navigate('MapPage')}
+                >
                   <Image
                     style={styles.img_map}
                     source={require('../../../components/assets/maps.jpg')}

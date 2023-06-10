@@ -13,6 +13,7 @@ import SignIn from './pages/auth/SignIn';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import ActivitiesList from './pages/user/ActivitiesList';
 import DetailPage from './pages/user/DetailPage';
+import MapPage from './pages/user/MapPage';
 
 const App = () =>{
   return(
@@ -25,6 +26,7 @@ const App = () =>{
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ActivitiesList" component={ActivitiesList} />
         <Stack.Screen name="DetailPage" component={DetailPage} />
+        <Stack.Screen name="MapPage" component={MapPage} />
       </Stack.Navigator>
       <FlashMessage position="top" />
     </NavigationContainer>
