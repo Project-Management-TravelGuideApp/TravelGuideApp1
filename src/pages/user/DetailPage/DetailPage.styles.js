@@ -37,4 +37,19 @@ export default StyleSheet.create({
         borderColor:'#cc9900',
         marginLeft:17,
     },
+    header:{
+        fontSize:25,
+        fontFamily:'LilitaOne-Regular',
+        color:'#1a1400',
+        alignSelf:'center',
+        marginVertical:10
+    },
+    description:{
+        fontSize:16,
+        fontFamily:'Righteous-Regular',
+        color:'black',
+        textAlign:'justify',
+        marginHorizontal:10,
+        fontWeight:'bold'
+    }
 });
