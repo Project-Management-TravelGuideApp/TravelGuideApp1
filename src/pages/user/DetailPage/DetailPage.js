@@ -1,11 +1,14 @@
 import React from "react";
-import {Text, View} from 'react-native';
+import {Text, View, Image} from 'react-native';
 
 
 const DetailPage = () => {
     return(
-        <View>
-            <Text>DetailPage</Text>
+        <View style={styles.container}>
+        <Image
+            source={require('../../../components/assets/     back-water-blur.jpg')}
+            style={styles.background}
+        />
         </View>
     );
 };
