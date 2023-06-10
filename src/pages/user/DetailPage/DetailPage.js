@@ -9,6 +9,15 @@ const DetailPage = () => {
             source={require('../../../components/assets/     back-water-blur.jpg')}
             style={styles.background}
         />
+
+<View style={styles.body_container}>
+              <View style={styles.image_container}>
+                <Image style={styles.image} />
+              </View>
+              <Text style={styles.header}></Text>
+              <Text style={styles.description}>
+              </Text>
+            </View>
         </View>
     );
 };

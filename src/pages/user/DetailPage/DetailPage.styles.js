@@ -13,4 +13,18 @@ export default StyleSheet.create({
         left:0, 
         bottom:0
     },
+    body_container:{
+        flexDirection:'column'
+    },
+    image_container:{
+        flexDirection:'row'
+    },
+    image:{
+        width:Dimensions.get('window').width/1.1,
+        height:Dimensions.get('window').height/2,
+        borderRadius:500,
+        borderWidth:3,
+        borderColor:'#cc9900',
+        marginLeft:17,
+    },
 });
