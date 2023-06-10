@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 
 
 const DetailPage = () => {
@@ -12,6 +12,14 @@ const DetailPage = () => {
 
 <View style={styles.body_container}>
               <View style={styles.image_container}>
+              <TouchableOpacity 
+                  style={styles.maps} 
+                >
+                  <Image
+                    style={styles.img_map}
+                    source={require('../../../components/assets/maps.jpg')}
+                  />
+                </TouchableOpacity>
                 <Image style={styles.image} />
               </View>
               <Text style={styles.header}></Text>

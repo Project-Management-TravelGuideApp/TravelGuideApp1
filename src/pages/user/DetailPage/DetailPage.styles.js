@@ -19,6 +19,16 @@ export default StyleSheet.create({
     image_container:{
         flexDirection:'row'
     },
+    img_map:{
+        borderRadius:500,
+        borderWidth:3,
+        borderColor:'#cc9900',
+        width:108,
+        height:108,
+        alignSelf:'flex-end',
+        marginBottom:-50,
+        
+    },
     image:{
         width:Dimensions.get('window').width/1.1,
         height:Dimensions.get('window').height/2,
