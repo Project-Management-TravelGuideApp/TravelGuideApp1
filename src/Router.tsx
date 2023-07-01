@@ -18,7 +18,7 @@ import MapPage from './pages/user/MapPage';
 const App = () =>{
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="FirstPage" screenOptions={{ headerShown:false }}>
+      <Stack.Navigator initialRouteName="MapPage" screenOptions={{ headerShown:false }}>
         <Stack.Screen name="FirstPage" component={FirstPage} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="HomePage" component={HomePage} />

@@ -1,10 +1,12 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-    container:{
-        flex:1
-    },
-    map_view:{
-        flex:1
-    }
+  container: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
 });
